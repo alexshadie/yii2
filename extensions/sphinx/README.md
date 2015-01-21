@@ -119,7 +119,7 @@ use yii\db\Expression;
 
 $query = new Query;
 $rows = $query->from('idx_item')
-    ->match(new Expression(':match', ['match' => '@(content) ' . Yii::$app->sphinx->escapeMatchValue($_POST['search'])]))
+    ->match(new Expression(':match', [':match' => '@(content) ' . Yii::$app->sphinx->escapeMatchValue($_POST['search'])]))
     ->all();
 ```
 
